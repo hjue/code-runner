@@ -143,3 +143,18 @@ No json will be written to stdout in those cases. Otherwise the exit code is 0.
   "error": ""
 }
 ```
+
+## Todo
+
+Goal: Not only can support the  running code, but also support online judges
+
+**Feature**
+
+
+- You can specify the method of running the function
+- Convert stdin to function parameter
+- Running data statistics, including running time
+- The output result is the return value of the running function 
+
+
+
