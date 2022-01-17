@@ -144,6 +144,37 @@ No json will be written to stdout in those cases. Otherwise the exit code is 0.
 }
 ```
 
+### OJ example
+##### Input
+```javascript
+{
+  "language": "python",
+  "stdin": "<parameters>",
+  "fn_content": "<full code>",
+  "class":"",
+  "method":""
+}
+```
+
+##### Output
+输出以下信息：
+- 函数的返回值，native code，输出至控制台，rust解析后  {"type":"fn_ret","content":""}
+- 统计数据：内存、运行时间 ，来自native code /rust  {"type":"sta","content":"<json_string>"}
+- 控制台输出，执行命令正常，控制台输出，需要过滤统计数据和函数返回 
+- 运行错误(stderr)，运行执行命令出错，控制台的输出
+- 编译错误(error)，运行编译命令出错，控制台的输出
+
+```javascript
+{
+  "stdout": "42\n",
+  "sta":"<time,mem>",
+  "fn_result":"<result>",
+  "stderr": "",
+  "error": ""
+}
+```
+
+
 ## Todo
 
 Goal: Not only can support the  running code, but also support online judges
@@ -155,6 +186,8 @@ Goal: Not only can support the  running code, but also support online judges
 - Convert stdin to function parameter
 - Running data statistics, including running time
 - The output result is the return value of the running function 
+
+
 
 
 
